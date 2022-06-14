@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <form>
+      <div class="form-group row">
+        <label for="name" class="col-4 col-form-label">Name</label> 
+        <div class="col-8">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-amazon"></i>
+              </div>
+            </div> 
+            <input id="name" name="name" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-4 col-form-label" for="category">Category</label> 
+        <div class="col-8">
+          <select id="category" name="category" class="custom-select" required="required">
+            <option value="Culture">Culture</option>
+            <option value="Public">Public</option>
+            <option value="Business">Business</option>
+            <option value="Interior">Interior</option>
+            <option value="House">House</option>
+            <option value="Tenders">Tenders</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-4"></div> 
+        <div class="col-8">
+          <div class="custom-control custom-checkbox custom-control-inline">
+            <input name="checkbox" id="checkbox_0" type="checkbox" class="custom-control-input" value="Featured" checked="checked" required="required"> 
+            <label for="checkbox_0" class="custom-control-label">Featured</label>
+          </div>
+          <div class="custom-control custom-checkbox custom-control-inline">
+            <input name="checkbox" id="checkbox_1" type="checkbox" class="custom-control-input" value="Product" checked="checked" required="required"> 
+            <label for="checkbox_1" class="custom-control-label">Product</label>
+          </div>
+          <div class="custom-control custom-checkbox custom-control-inline">
+            <input name="checkbox" id="checkbox_2" type="checkbox" class="custom-control-input" value="Slideshowimage" checked="checked" required="required"> 
+            <label for="checkbox_2" class="custom-control-label">Slideshowimage</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="location" class="col-4 col-form-label">Location</label> 
+        <div class="col-8">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-location-arrow"></i>
+              </div>
+            </div> 
+            <input id="location" name="location" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="investor" class="col-4 col-form-label">Investor</label> 
+        <div class="col-8">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-money"></i>
+              </div>
+            </div> 
+            <input id="investor" name="investor" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="author" class="col-4 col-form-label">Author</label> 
+        <div class="col-8">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-file-text-o"></i>
+              </div>
+            </div> 
+            <input id="author" name="author" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="collaborator" class="col-4 col-form-label">Collaborators</label> 
+        <div class="col-8">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-address-book-o"></i>
+              </div>
+            </div> 
+            <input id="collaborator" name="collaborator" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="year" class="col-4 col-form-label">Year</label> 
+        <div class="col-8">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-calendar"></i>
+              </div>
+            </div> 
+            <input id="year" name="year" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="square" class="col-4 col-form-label">Square</label> 
+        <div class="col-8">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-behance-square"></i>
+              </div>
+            </div> 
+            <input id="square" name="square" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-4">Status</label> 
+        <div class="col-8">
+          <div class="custom-control custom-checkbox custom-control-inline">
+            <input name="status" id="status_0" type="checkbox" class="custom-control-input" value="status"> 
+            <label for="status_0" class="custom-control-label">Status</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="text" class="col-4 col-form-label">Description</label> 
+        <div class="col-8">
+          <textarea id="text" name="text" cols="40" rows="5" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="gname" class="col-4 col-form-label">Editor Name</label> 
+        <div class="col-8">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-amazon"></i>
+              </div>
+            </div> 
+            <input id="gname" name="gname" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="gtype" class="col-4 col-form-label">Editor type</label> 
+        <div class="col-8">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-id-card-o"></i>
+              </div>
+            </div> 
+            <input id="gtype" name="gtype" type="text" class="form-control">
+          </div>
+        </div>
+      </div> 
+      <div class="form-group row">
+        <div class="offset-4 col-8">
+          <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

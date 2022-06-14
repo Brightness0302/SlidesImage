@@ -1,0 +1,19 @@
+
+
+{
+    "img1":             "assets/img/generic/generic-corporate-3-2-full.jpg",
+    "img2":             "assets/img/generic/generic-corporate-3-3-full.jpg",
+    "info1":            "PROTO-ARCH u procesu projektiranja klijentima omogućava aktivnu ulogu u definiranju njihovih potreba. Svaki projekt razvija se od specifičnih zahtjeva klijenata, a različitost tema iziskuje individualni pristup. Pristup projektiranju sveobuhvatan je i uključuje razna znanja o lokaciji, povijesti i kulturi te podrazumijeva suradnju s inženjerima različitih struka, umjetnicima i dizajnerima, što rezultira jedinstvenom arhitektonskom pričom koja govori inspirativnim dizajnom.",
+    "info2":            "Odgovornost prema klijentu u temeljima je našeg rada, a kao arhitekti svjesni smo i odgovornosti prema javnom prostoru i zajednici. Klijenti ureda u jednakoj su mjeri privatni investitori kao i javni sektor. Bez obzira na veličinu i mjerilo projekta te profil naručitelja, naši klijenti mogu se pouzdati u našu besprijekornu uslugu znajući da pratimo svaki detalj projekta kako bi se dovršio na najvišem nivou kvalitete i unutar komercijalnih zahtjeva.",
+    "teaminfo":         "Upoznajte naš tim",
+    "teamimg1":         "assets/img/team/team-1.jpg",
+    "teaminfo1":        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan",
+    "teamimg2":         "assets/img/team/team-2.jpg",
+    "teaminfo2":        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan",
+    "teamimg3":         "assets/img/team/team-3.jpg",
+    "teaminfo3":        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan",
+    "teamimg4":         "assets/img/team/team-4.jpg",
+    "teaminfo4":        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan",
+    "history":          "Naša <strong class='font-weight-extra-bold'>povijest</strong>",
+    "about":            "Kako smo počeli, lorem ipsum dolor sit amet, consectetur adipiscing elit ac laoreet libero."
+}

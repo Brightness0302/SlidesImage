@@ -1,0 +1,19 @@
+
+
+{
+	"img1":				"assets/img/generic/generic-corporate-3-2-full.jpg",
+	"img2":				"assets/img/generic/generic-corporate-3-3-full.jpg",
+	"info1":			"PROTO-ARCH in the design process allows clients to play an active role in defining their needs. Each project develops from the specific requirements of the clients, and the diversity of topics requires an individual approach. The design approach is comprehensive and includes a variety of knowledge about location, history and culture and involves collaboration with engineers of different professions, artists and designers, resulting in a unique architectural story that speaks to inspiring design.",
+	"info2":			"Responsibility towards the client is the foundation of our work, and as architects we are aware of the responsibility towards the public space and the community. The office's clients are as much private investors as the public sector. Regardless of the size and scale of the project and the profile of the client, our clients can rely on our impeccable service knowing that we follow every detail of the project to be completed at the highest level of quality and within commercial requirements.",
+	"teaminfo":			"Meet our team",
+	"teamimg1":			"assets/img/team/team-1.jpg",
+	"teaminfo1":		"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.",
+	"teamimg2":			"assets/img/team/team-2.jpg",
+	"teaminfo2":		"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.",
+	"teamimg3":			"assets/img/team/team-3.jpg",
+	"teaminfo3":		"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.",
+	"teamimg4":			"assets/img/team/team-4.jpg",
+	"teaminfo4":		"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.",
+	"history":			"Our <strong class='font-weight-extra-bold'>History</strong>",
+	"about":			"How we started, lorem ipsum dolor sit amet, consectetur adipiscing elit ac laoreet libero."
+}
