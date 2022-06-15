@@ -15,7 +15,7 @@
 						  </li>
 						</ul>
 
-						<div class="tab-content">
+						<div class="tab-content mt-4">
 						  <div class="tab-pane active" id="HR" role="tabpanel" aria-labelledby="HR-tab">
 						  	<div class="form-group row">
 					        	<div class="col-6">
@@ -77,6 +77,14 @@
 							          </select>
 							        </div>
 							      </div>
+									<div class="form-group row">
+								        <label for="vimeo" class="col-4 col-form-label">Vimeo URL</label> 
+										<div class="col-8">
+								          <div class="input-group">
+								            <input id="vimeo" name="vimeo" type="text" class="form-control" placeholder="Vimeo ID" value="<?=$projects['videourl']?>" onchange="changeText(this,1)">
+								          </div>
+								        </div>
+									</div>
 
 					        	</div>
 					        	<div class="col-6">
@@ -86,7 +94,7 @@
 										  <div class="input-group">
 										    <div class="input-group-prepend">
 										      <div class="input-group-text">
-										        <i class="fa fa-amazon"></i>
+										        <i style="font-size:24px" class="fa fa-amazon"></i>
 										      </div>
 										    </div> 
 										    <input id="name" name="name" type="text" class="form-control" value="<?=$projects['name']?>" onchange="changeText(this,1)">
@@ -99,7 +107,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-location-arrow"></i>
+								                <i style="font-size:24px" class="fa fa-location-arrow"></i>
 								              </div>
 								            </div> 
 								            <input id="location" name="location" type="text" class="form-control" value="<?=$projects['location']?>" onchange="changeText(this,1)">
@@ -112,7 +120,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-money"></i>
+								                <i style="font-size:24px" class="fa fa-money"></i>
 								              </div>
 								            </div> 
 								            <input id="investor" name="investor" type="text" class="form-control" value="<?=$projects['investor']?>" onchange="changeText(this,1)">
@@ -125,7 +133,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-file-text-o"></i>
+								                <i style="font-size:24px" class="fa fa-file-text-o"></i>
 								              </div>
 								            </div> 
 								            <input id="author" name="author" type="text" class="form-control" value="<?=$projects['author']?>" onchange="changeText(this,1)">
@@ -138,7 +146,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-address-book-o"></i>
+								                <i style="font-size:24px" class="fa fa-address-book-o"></i>
 								              </div>
 								            </div> 
 								            <input id="collaborator" name="collaborator" type="text" class="form-control" value="<?=$projects['collaborators']?>" onchange="changeText(this,1)">
@@ -151,7 +159,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-calendar"></i>
+								                <i style="font-size:24px" class="fa fa-calendar"></i>
 								              </div>
 								            </div> 
 								            <input id="year" name=" " type="text" class="form-control" value="<?=$projects['year']?>" onchange="changeText(this,1)">
@@ -164,7 +172,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-behance-square"></i>
+								                <i style="font-size:24px" class="fa fa-behance-square"></i>
 								              </div>
 								            </div> 
 								            <input id="square" name="square" type="text" class="form-control" value="<?=$projects['square']?>" onchange="changeText(this,1)">
@@ -242,6 +250,14 @@
 							          </select>
 							        </div>
 							      </div>
+									<div class="form-group row">
+								        <label for="vimeo" class="col-4 col-form-label">Vimeo URL</label> 
+										<div class="col-8">
+								          <div class="input-group">
+								            <input id="evimeo" name="evimeo" type="text" class="form-control" placeholder="Vimeo ID" value="<?=$projects['videourl']?>" onchange="changeText(this,2)">
+								          </div>
+								        </div>
+									</div>
 					        	</div>
 					        	<div class="col-6">
 									<div class="form-group row">
@@ -250,7 +266,7 @@
 										  <div class="input-group">
 										    <div class="input-group-prepend">
 										      <div class="input-group-text">
-										        <i class="fa fa-amazon"></i>
+										        <i style="font-size:24px" class="fa fa-amazon"></i>
 										      </div>
 										    </div> 
 										    <input id="ename" name="ename" type="text" class="form-control" value="<?=$projects['ename']?>">
@@ -263,7 +279,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-location-arrow"></i>
+								                <i style="font-size:24px" class="fa fa-location-arrow"></i>
 								              </div>
 								            </div> 
 								            <input id="elocation" name="elocation" type="text" class="form-control" value="<?=$projects['elocation']?>">
@@ -276,7 +292,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-money"></i>
+								                <i style="font-size:24px" class="fa fa-money"></i>
 								              </div>
 								            </div> 
 								            <input id="einvestor" name="einvestor" type="text" class="form-control" value="<?=$projects['investor']?>" onchange="changeText(this,2)">
@@ -289,7 +305,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-file-text-o"></i>
+								                <i style="font-size:24px" class="fa fa-file-text-o"></i>
 								              </div>
 								            </div> 
 								            <input id="eauthor" name="eauthor" type="text" class="form-control" value="<?=$projects['author']?>" onchange="changeText(this,2)">
@@ -302,7 +318,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-address-book-o"></i>
+								                <i style="font-size:24px" class="fa fa-address-book-o"></i>
 								              </div>
 								            </div> 
 								            <input id="ecollaborator" name="ecollaborator" type="text" class="form-control" value="<?=$projects['collaborators']?>" onchange="changeText(this,2)">
@@ -315,7 +331,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-calendar"></i>
+								                <i style="font-size:24px" class="fa fa-calendar"></i>
 								              </div>
 								            </div> 
 								            <input id="eyear" name="eyear" type="text" class="form-control" value="<?=$projects['year']?>" onchange="changeText(this,2)">
@@ -328,7 +344,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-behance-square"></i>
+								                <i style="font-size:24px" class="fa fa-behance-square"></i>
 								              </div>
 								            </div> 
 								            <input id="esquare" name="esquare" type="text" class="form-control" value="<?=$projects['square']?>" onchange="changeText(this,2)">
@@ -345,26 +361,18 @@
 								</div>
 							</div>
 						  </div>
-
-						  	<div class="form-group row border-top border-primary">
+						  <hr style = "border:1px solid blue">
+						  	<div class="form-group row mt-4">
 								<div class="col-12">
 									<div class="form-group row">
 										<div class="col-6">
-											<div class="form-group row">
-										        <label for="vimeo" class="col-4 col-form-label">Vimeo URL</label> 
-												<div class="col-8">
-										          <div class="input-group">
-										            <input id="vimeo" name="vimeo" type="text" class="form-control" placeholder="Vimeo ID" value="<?=$projects['videourl']?>">
-										          </div>
-										        </div>
-											</div>
 											<div class="form-group row">
 												<label for="text" class="col-4 col-form-label"><?=$language[$this->session->userdata('language')]['upload.imagecount']?></label> 
 												<div class="col-8">
 													<div class="input-group">
 														<div class="input-group-prepend">
 															<div class="input-group-text">
-																<i class="fa fa-sort-numeric-asc"></i>
+																<i style="font-size:24px" class="fa fa-sort-numeric-asc"></i>
 															</div>
 														</div> 
 														<input id="gcount" name="gcount" type="text" class="form-control" value="<?=count($files)?>" disabled>
@@ -386,7 +394,7 @@
 											<div id="main">
 												<div class="uploadrow" id="uploadrow">
 													<?php foreach($files as $key => $file):?>
-														<img class="block col-sm-4" name="<?=($imgorder[$key])?>" src="<?=base_url($file)?>">
+														<img class="block col-sm-6" name="<?=($imgorder[$key])?>" src="<?=base_url($file)?>">
 													<?php endforeach;?>
 												</div>
 											</div>
@@ -408,8 +416,7 @@
 												z-index: -1;
 											}
 											#main .block { 
-												height: 100px; 
-												border: 1px black solid; 
+												height: 170px; 
 											}
 											.uploadrow { 
 												min-height: 100px; 
@@ -494,7 +501,7 @@
 														t = file.type, // ext only: // file.type.split('/')[1],
 														n = file.name,
 														s = ~~(file.size/1024) +'KB';
-														$('.uploadrow').append("<img class='block col-sm-4' name='"+count+"' src='"+this.src+"'>");
+														$('.uploadrow').append("<img class='block col-sm-6' name='"+count+"' src='"+this.src+"'>");
 														if (count===maxcount) {
 															console.log("uploaded");
 															$('.uploadrow').each(function() {
@@ -543,7 +550,7 @@
 				          <div class="input-group">
 				            <div class="input-group-prepend">
 				              <div class="input-group-text">
-				                <i class="fa fa-amazon"></i>
+				                <i style="font-size:24px" class="fa fa-amazon"></i>
 				              </div>
 				            </div> 
 				            <input id="gname" name="gname" type="text" class="form-control" value="<?=$projects['gname']?>">
@@ -556,7 +563,7 @@
 				          <div class="input-group">
 				            <div class="input-group-prepend">
 				              <div class="input-group-text">
-				                <i class="fa fa-id-card-o"></i>
+				                <i style="font-size:24px" class="fa fa-id-card-o"></i>
 				              </div>
 				            </div> 
 				            <input id="gtype" name="gtype" type="text" class="form-control" value="<?=$projects['gtype']?>">

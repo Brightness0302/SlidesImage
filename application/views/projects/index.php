@@ -6,7 +6,7 @@
 
                 	<?php foreach ($projects as $key=>$data):?>
                 		<div class='col-sm-6 col-lg-4 mb-3 pb-5 mb-lg-0 appear-animation' data-appear-animation='fadeInRightShorter'>
-	                        <a href="<?=base_url('projects/details/'.$data['id'])?>">
+	                        <a href="<?=base_url('details/'.$data['id'])?>">
 		                        <span class='thumb-info bg-transparent border-radius-0'>
 		                            <span class='thumb-info-wrapper border-radius-0 position-relative'>
 	                                    <img src="<?=base_url().$files[$key]?>" class='img-fluid border-radius-0 height-230' alt=''>

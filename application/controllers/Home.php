@@ -153,7 +153,7 @@ class Home extends CI_Controller {
         if (!$email||!$pass) {
             $array_msg = array('message'=>'You must fill Email and password!','type'=>'loginerror','email'=>$email);
             $this->session->set_flashdata('msg',$array_msg);
-            redirect(base_url('home/adminlogin'));
+            redirect(base_url('signin'));
             return;
         }
 
@@ -162,10 +162,10 @@ class Home extends CI_Controller {
         if ($result['msg']!='success') {
             $array_msg = array('message'=>'Sorry Retype Password!','type'=>'loginerror','email'=>$email);
             $this->session->set_flashdata('msg',$array_msg);
-            redirect(base_url('home/adminlogin'));
+            redirect(base_url('signin'));
             return;
         }
-        $this->manage();
+        redirect(base_url('manage'));
     }
 
     public function manage() {

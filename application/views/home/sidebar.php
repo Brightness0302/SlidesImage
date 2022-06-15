@@ -26,7 +26,7 @@
             
           </li>
           <li class="nav-item">
-            <a href="<?=base_url('home/managestudio')?>" class="nav-link <?=($this->session->userdata("clicked")=="studio")?"active":""?>">
+            <a href="<?=base_url('managestudio')?>" class="nav-link <?=($this->session->userdata("clicked")=="studio")?"active":""?>">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 <?=$language[$this->session->userdata('language')]['mproj.gotostudio']?>
@@ -35,7 +35,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="<?=base_url('home/manage')?>" class="nav-link <?=($this->session->userdata("clicked")=="projects")?"active":""?>">
+            <a href="<?=base_url('manage')?>" class="nav-link <?=($this->session->userdata("clicked")=="projects")?"active":""?>">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 <?=$language[$this->session->userdata('language')]['mproj.gotoproject']?>

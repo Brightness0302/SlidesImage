@@ -15,7 +15,7 @@
 						  </li>
 						</ul>
 
-						<div class="tab-content">
+						<div class="tab-content mt-4">
 						  <div class="tab-pane active" id="HR" role="tabpanel" aria-labelledby="HR-tab">
 						  	<div class="form-group row">
 					        	<div class="col-6">

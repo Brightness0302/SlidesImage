@@ -4,7 +4,7 @@
 				<div class="row align-items-center">
 
 					<div class="col-2">
-						<a href="<?=base_url("projects/details/$prev[id]")?>" class="portfolio-prev text-decoration-none d-block appear-animation" data-appear-animation="fadeInRightShorter">
+						<a href="<?=base_url("details/$prev[id]")?>" class="portfolio-prev text-decoration-none d-block appear-animation" data-appear-animation="fadeInRightShorter">
 							<div class="d-inline-flex align-items-center line-height-1">
 								<i class="fas fa-thin fa-chevron-left text-dark text-4 me-3"></i>
 								<div class="d-none d-sm-block line-height-1">
@@ -26,7 +26,7 @@
 					</div>
 
 					<div class="col-2">
-						<a href="<?=base_url("projects/details/$next[id]")?>" class="portfolio-next text-decoration-none d-block float-end appear-animation" data-appear-animation="fadeInLeftShorter">
+						<a href="<?=base_url("details/$next[id]")?>" class="portfolio-next text-decoration-none d-block float-end appear-animation" data-appear-animation="fadeInLeftShorter">
 							<div class="d-inline-flex align-items-center text-end line-height-1">
 								<div class="d-none d-sm-block line-height-1">
 									<span class="text-dark opacity-4 text-1"><?=$language[$this->session->userdata('language')]['proj.next']?></span>

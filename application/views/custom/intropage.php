@@ -1,5 +1,5 @@
 <!-- intropage -->
-<div class="owl-carousel owl-carousel-light owl-theme manual dots-inside dots-horizontal-center nav-style-2 nav-inside nav-inside-plus nav-light nav-md nav-font-size-2xl show-nav-hover mb-0 owl-drag" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'autoplay': true, 'lazyLoad': true, 'smartSpeed': 1000, 'autoplayTimeout': 4000}" style="height: 100vh;">
+<div class="owl-carousel owl-carousel-light owl-theme manual dots-inside dots-horizontal-center nav-style-2 nav-inside nav-inside-plus nav-light nav-md nav-font-size-2xl show-nav-hover mb-0 owl-drag" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'autoplay': true, 'lazyLoad': true, 'smartSpeed': 3000, 'autoplayTimeout': 8000}" style="height: 100vh;">
     <div class="owl-stage-outer">
         <div class="owl-stage">
 
@@ -14,7 +14,7 @@
                                     <h2 class="descborder text-color-light text-5-5 line-height-1 line-height-sm-3 mb-2 appear-animation positive-ls-1" data-appear-animation="fadeInUpShorter" style="color: white;" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}">
                                         <?=($this->session->userdata('language')=="croatian")?$titles[$key]:$etitles[$key]?>
                                     </h2>
-                                    <a href="<?=base_url('projects/details/'.$ids[$key])?>" style="text-align: right;">
+                                    <a href="<?=base_url('details/'.$ids[$key])?>" style="text-align: right;">
                                         <p class="text-4 text-color-light font-weight-light" style="margin-bottom: 0px; color: white;" data-plugin-animated-letters data-plugin-options="{'startDelay': 100, 'minWindowWidth': 0, 'animationSpeed': 30}">
                                             <?=$language[$this->session->userdata('language')]['main.more']?> >>>
                                         </p>

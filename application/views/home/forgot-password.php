@@ -34,10 +34,10 @@
       </form>
 
       <p class="mt-3 mb-1">
-        <a href="<?=base_url('home/adminlogin')?>">Login</a>
+        <a href="<?=base_url('signin')?>">Login</a>
       </p>
       <p class="mb-0">
-        <a href="<?=base_url('home/adminregister')?>" class="text-center">Register a new membership</a>
+        <a href="<?=base_url('signup')?>" class="text-center">Register a new membership</a>
       </p>
     </div>
     <!-- /.login-card-body -->

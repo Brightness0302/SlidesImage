@@ -62,10 +62,10 @@
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="<?=base_url('home/adminforgot')?>">I forgot my password</a>
+        <a href="<?=base_url('forgotpassword')?>">I forgot my password</a>
       </p>
       <p class="mb-0">
-        <a href="<?=base_url('home/adminregister')?>" class="text-center">Register a new membership</a>
+        <a href="<?=base_url('signup')?>" class="text-center">Register a new membership</a>
       </p>
     </div>
     <!-- /.login-card-body -->

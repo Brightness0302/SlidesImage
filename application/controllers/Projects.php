@@ -92,7 +92,7 @@ class Projects extends CI_Controller {
         $this->load->model('projects_model', 'projects');
         $projects = $this->projects->projectsfromcategory($id);
         if(is_null($projects)||$projects==NULL) {
-            redirect(base_url()."/projects/details/0");
+            redirect(base_url()."details/0");
         }
         $prev = $this->projects->prevprojectsNamefromcategory($id);
         $next = $this->projects->nextprojectsNamefromcategory($id);
