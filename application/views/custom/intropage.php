@@ -15,7 +15,7 @@
                                         <?=($this->session->userdata('language')=="croatian")?$titles[$key]:$etitles[$key]?>
                                     </h2>
                                     <a href="<?=base_url('details/'.$ids[$key])?>" style="text-align: right;">
-                                        <p class="text-4 text-color-light font-weight-light" style="margin-bottom: 0px; color: white;" data-plugin-animated-letters data-plugin-options="{'startDelay': 100, 'minWindowWidth': 0, 'animationSpeed': 30}">
+                                        <p class="text-4 text-color-light font-weight-light" style="min-height: 30px; color: white;" data-plugin-animated-letters data-plugin-options="{'startDelay': 100, 'minWindowWidth': 0, 'animationSpeed': 30}">
                                             <?=$language[$this->session->userdata('language')]['main.more']?> >>>
                                         </p>
                                     </a>
