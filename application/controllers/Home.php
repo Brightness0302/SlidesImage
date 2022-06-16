@@ -55,7 +55,7 @@ class Home extends CI_Controller {
                 array_push($images ,$testimages[$c]);
                 array_push($titles ,$testtitles[$c]);
                 array_push($etitles ,$testetitles[$c]);
-                array_push($ids, $projects[$i]["id"]);
+                array_push($ids, $i);
             }
         }
 
@@ -413,7 +413,7 @@ class Home extends CI_Controller {
 
                 if($this->upload->do_upload('file')){
                     $uploadData = $this->upload->data();
-                    $this->resize_image($uploadData['full_path']);
+                    // $this->resize_image($uploadData['full_path']);
                     // $filename = $uploadData['file_name'];
                     // $arr = array('msg' => 'Image has been uploaded successfully', 'success' => true);
                 }
@@ -459,7 +459,7 @@ class Home extends CI_Controller {
 
             if($this->upload->do_upload('file')){
                 $uploadData = $this->upload->data();
-                $this->resize_image($uploadData['full_path']);
+                // $this->resize_image($uploadData['full_path']);
                 // $filename = $uploadData['file_name'];
                 // $arr = array('msg' => 'Image has been uploaded successfully', 'success' => true);
             }

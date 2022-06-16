@@ -5,7 +5,7 @@
 
             <!-- Carousel Slide 1 -->
             <?php foreach($files as $key=>$file):?>
-            <div class="owl-item position-relative" style="background-image: url(<?=base_url($file)?>); background-size: cover; background-position: center; height: 100vh;">
+            <div class="owl-item position-relative" style="background-image: url(<?=base_url($file)?>); background-size: cover; background-position: center;">
                 <div class="container-fluid position-relative z-index-3 h-100">
                     <div class="row justify-content-right align-items-right h-100">
                         <div class="col-lg-3 offset-lg-9 text-right pull-right">
@@ -14,8 +14,8 @@
                                     <h2 class="descborder text-color-light text-5-5 line-height-1 line-height-sm-3 mb-2 appear-animation positive-ls-1" data-appear-animation="fadeInUpShorter" style="color: white;" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}">
                                         <?=($this->session->userdata('language')=="croatian")?$titles[$key]:$etitles[$key]?>
                                     </h2>
-                                    <a href="<?=base_url('details/'.$ids[$key])?>" style="text-align: right;">
-                                        <p class="text-4 text-color-light font-weight-light" style="min-height: 30px; color: white;" data-plugin-animated-letters data-plugin-options="{'startDelay': 100, 'minWindowWidth': 0, 'animationSpeed': 30}">
+                                    <a href="https://player.vimeo.com/video/<?=$data[$ids[$key]]['videourl']?>" style="text-align: right;">
+                                        <p class="text-4 text-color-light font-weight-light" style="margin-bottom: 0px; color: white;" data-plugin-animated-letters data-plugin-options="{'startDelay': 100, 'minWindowWidth': 0, 'animationSpeed': 30}">
                                             <?=$language[$this->session->userdata('language')]['main.more']?> >>>
                                         </p>
                                     </a>
@@ -33,7 +33,7 @@
         <button type="button" role="presentation" class="owl-prev"></button>
         <button type="button" role="presentation" class="owl-next"></button>
     </div>
-    <div class="owl-dots mb-5">
+    <div class="owl-dots mb-5" style="left: 50%;transform: translate(-50%,-50%);">
         <?php foreach($files as $key=>$file):?>
         <button role="button" class="owl-dot <?=($key==0)?'active':''?>"><span></span></button>
         <?php endforeach;?>
