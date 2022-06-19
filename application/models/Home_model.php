@@ -247,4 +247,34 @@ class Home_model extends CI_Model {
         $res=$this->db->delete('studio_employee');
         return $res;
     }
+
+    public function mbsaveItem($id, $description, $edescription) {
+        $data = array(
+            'description'=>$description,
+            'edescription'=>$edescription
+        );
+
+        $this->db->where('id', $id);
+        $res=$this->db->update('studio_background', $data);
+        
+        return $res;
+    }
+
+    public function mbcreateItem($description, $edescription) {
+        $data = array(
+            'description'=>$description,
+            'edescription'=>$edescription
+        );
+
+        $this->db->insert('studio_background',$data);
+        $projects_id = $this->db->insert_id();
+
+        return $projects_id;
+    }
+
+    public function mbdeleteitem($id) {
+        $this->db->where('id', $id);
+        $res=$this->db->delete('studio_background');
+        return $res;
+    }
 }

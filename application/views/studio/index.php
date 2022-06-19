@@ -5,27 +5,21 @@
                     <div class="row align-items-center">
                         <div class="col-md-6 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1000">
                             <div class="owl-carousel owl-theme nav-inside mb-0 dots-inside dots-horizontal-center" data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}">
-                                <div>
-                                    <img alt="" class="img-fluid" src="<?=base_url('assets/bg-studio/1.jpg')?>">
-                                </div>
-                                <div>
-                                    <img alt="" class="img-fluid" src="<?=base_url('assets/bg-studio/2.jpg')?>">
-                                </div>
-                                <div>
-                                    <img alt="" class="img-fluid" src="<?=base_url('assets/bg-studio/3.jpg')?>">
-                                </div>
-                                <div>
-                                    <img alt="" class="img-fluid" src="<?=base_url('assets/bg-studio/4.jpg')?>">
-                                </div>
+                                <?php foreach($backgrounds as $key=>$background):?>
+                                    <?php if(file_exists('assets/background/'.$background['id'].'.jpg')):?>
+                                    <div>
+                                        <img alt="" class="img-fluid" src="<?=base_url('assets/background/'.$background['id'].'.jpg')?>">
+                                    </div>
+                                    <?php endif;?>
+                                <?php endforeach;?>
                             </div>
                         </div>
                         <div class="col-md-6">
+                            <?php foreach($backgrounds as $key=>$background):?>
                             <p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1400">
-                            <?=$teaminfo[$this->session->userdata['language']]['info1']?>
+                            <?= $background[($this->session->userdata('language')=="english")?"description":"edescription"]?>
                             </p>
-                            <p class="mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1600">
-                            <?=$teaminfo[$this->session->userdata['language']]['info2']?>
-                            </p>
+                            <?php endforeach;?>
                         </div>
                     </div>
 

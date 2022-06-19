@@ -223,13 +223,13 @@ class Home extends CI_Controller {
         $this->load->model('Projects_model', 'projects');
         $this->session->set_userdata("where","");
         $this->session->set_userdata("clicked","studio_background");
-        $projects['projects'] = $this->projects->allstudio();
+        $projects['projects'] = $this->projects->allbackground();
 
         $this->load->view('home/page_header');
         $this->load->view('home/navbar');
         $this->load->view('home/sidebar',$data);
         $this->load->view('home/page_main_head');
-        $this->load->view('manage/studio' ,$projects);
+        $this->load->view('manage/background' ,$projects);
         $this->load->view('home/page_main_foot');
         $this->load->view('home/page_footer');
     }
@@ -333,7 +333,7 @@ class Home extends CI_Controller {
         echo "clickrecover";
     }
 
-    public function multipleImageStore() {
+    public function multipleImageStore($path) {
         if (!isset($_GET['id'])) // works with request
             return;
 
@@ -341,10 +341,12 @@ class Home extends CI_Controller {
 
         $id = $_GET['id'];
         // echo $countfiles;
-
         $count = count($_FILES['files']['name']);
-        if ($count>0) {
+        if ($path=="project")
             $path="assets/projects/".$id;
+        else if ($path=="background")
+            $path="assets/background/";
+        if ($count>0) {
             $this->load->helper("file"); // load the helper
             delete_files($path, true); // delete all files/folders
 
@@ -398,6 +400,8 @@ class Home extends CI_Controller {
             $path="assets/studio/";
         if ($path=="employee")
             $path="assets/employee/";
+        if ($path=="background")
+            $path="assets/background/";
         if(file_exists($path.$id.".jpg")) {
             unlink($path.$id.".jpg");
         }
@@ -733,6 +737,84 @@ class Home extends CI_Controller {
         // echo $id.$name.$category.$featured.$product.$slideshowimage.$location.$investor.$author.$collaborator.$year.$square.$text.$gname.$gtype;
 
         $result = $this->home->mesaveItem($id, $name, $type, $facebook, $twitter, $linkedin, $description, $edescription);
+        echo $result;
+    }
+
+    public function clickmbdelete() {
+        $id = $this->input->post('id');
+        
+        $this->load->model('Home_model', 'home');
+        $res = $this->home->mbdeleteitem($id);
+        echo $res;
+        return;
+    }
+
+    public function clickmbedit($id) {
+        if (!$id) // works with request
+            return;
+
+        $this->mbeditpage($id);
+    }
+
+    public function mbcreatepage() {
+        $this->checklanguage();
+
+        $data['title'] = 'Protoarch';
+        $data['language']['english']=$this->lang->load('proj','english',true);
+        $data['language']['croatian']=$this->lang->load('proj','croatian',true);
+
+        $this->session->set_userdata("clicked","studio_background");
+
+        $this->load->view('home/page_header');
+        $this->load->view('home/navbar');
+        $this->load->view('home/sidebar',$data);
+        $this->load->view('home/page_main_head');
+        $this->load->view('manage/mbcreatepage');
+        $this->load->view('home/page_main_foot');
+        $this->load->view('home/page_footer');
+    }
+
+    public function mbeditpage($id) {
+        $this->checklanguage();
+        $this->load->model('projects_model', 'projects');
+        $projects = $this->projects->backgroundfromid($id);
+
+        $data['title'] = 'Protoarch';
+        $data['projects'] = $projects[0];
+        $data['language']['english']=$this->lang->load('proj','english',true);
+        $data['language']['croatian']=$this->lang->load('proj','croatian',true);
+
+        $this->session->set_userdata("clicked","studio_background");
+
+        $this->load->view('home/page_header');
+        $this->load->view('home/navbar');
+        $this->load->view('home/sidebar',$data);
+        $this->load->view('home/page_main_head');
+        $this->load->view('manage/mbeditpage', $data);
+        $this->load->view('home/page_main_foot');
+        $this->load->view('home/page_footer');
+    }
+
+    public function mbsaveclick() {
+        $description = $this->input->post('description');
+        $edescription = $this->input->post('edescription');
+
+        $this->load->model('Home_model', 'home');
+
+        if (!isset($_GET['id'])) // works with request
+        {
+            $projects_id = $this->home->mbcreateItem($description, $edescription);
+            echo $projects_id;
+            return $projects_id;
+        }
+
+        // echo "123:".$this->lang->line('proj.proj_sel');
+
+        $id = $_GET['id'];
+
+        // echo $id.$name.$category.$featured.$product.$slideshowimage.$location.$investor.$author.$collaborator.$year.$square.$text.$gname.$gtype;
+
+        $result = $this->home->mbsaveItem($id, $description, $edescription);
         echo $result;
     }
 

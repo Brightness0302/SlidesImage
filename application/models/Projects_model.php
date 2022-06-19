@@ -124,4 +124,19 @@ class Projects_model extends CI_Model {
 
         return $this->db->query($query)->result_array();
     }
+
+    public function allbackground()
+    {
+        $query =    "SELECT * FROM `studio_background`";
+
+        return $this->db->query($query)->result_array();
+    }
+
+    public function backgroundfromid($id)
+    {
+        $query =    "SELECT * FROM `studio_background`
+                    WHERE `id`=$id";
+
+        return $this->db->query($query)->result_array();
+    }
 }

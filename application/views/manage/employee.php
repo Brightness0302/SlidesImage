@@ -36,7 +36,7 @@
           var index = r.parentNode.parentNode.rowIndex;
           if(confirm('Are you sure?')) {
             $.ajax({
-                url: "<?=base_url('home/clickmedelete')?>",
+                url: "<?=base_url('home/clickmbdelete')?>",
                 type: 'POST',
                 data: {id:id},
                 error: function() {
