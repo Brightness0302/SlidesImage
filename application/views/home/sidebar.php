@@ -25,17 +25,38 @@
           <li class="nav-item menu-open">
             
           </li>
-          <li class="nav-item">
-            <a href="<?=base_url('managestudio')?>" class="nav-link <?=($this->session->userdata("clicked")=="studio")?"active":""?>">
-              <i class="nav-icon fas fa-th"></i>
+          <li class="nav-item <?=($this->session->userdata("clicked")!="projects")?"menu-is-opening menu-open":""?>">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
               <p>
                 <?=$language[$this->session->userdata('language')]['mproj.gotostudio']?>
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=base_url('home/managestudio/background')?>" class="nav-link <?=($this->session->userdata("clicked")=="studio_background")?"active":""?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Background</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url('home/managestudio/employee')?>" class="nav-link <?=($this->session->userdata("clicked")=="studio_employee")?"active":""?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p><?=$language[$this->session->userdata('language')]['mproj.gotoemployee']?></p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url('home/managestudio/timeline')?>" class="nav-link <?=($this->session->userdata("clicked")=="studio_timeline")?"active":""?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p><?=$language[$this->session->userdata('language')]['mproj.gototimeline']?></p>
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-item">
-            <a href="<?=base_url('manage')?>" class="nav-link <?=($this->session->userdata("clicked")=="projects")?"active":""?>">
+            <a href="<?=base_url('home/manage')?>" class="nav-link <?=($this->session->userdata("clicked")=="projects")?"active":""?>">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 <?=$language[$this->session->userdata('language')]['mproj.gotoproject']?>

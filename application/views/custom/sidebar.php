@@ -96,7 +96,7 @@
                                         </li>
                                         <li><a class="dropdown-item" href="<?=base_url($language[$this->session->userdata('language')]['url.url10'])?>">/ <span class="mlink"><?=$language[$this->session->userdata('language')]['proj.finest']?></span></a></li>
                                         <li><a class="dropdown-item" href="<?=base_url($language[$this->session->userdata('language')]['url.url11'])?>">/ <span class="mlink"><?=$language[$this->session->userdata('language')]['proj.studio']?></span></a></li>
-                                        <li><a class="dropdown-item" href="<?=base_url($language[$this->session->userdata('language')]['url.url12'])?>">/ <span class="mlink"><?=$language[$this->session->userdata('language')]['proj.news']?></span></a></li>
+                                        <!-- <li><a class="dropdown-item" href="<?=base_url($language[$this->session->userdata('language')]['url.url12'])?>">/ <span class="mlink"><?=$language[$this->session->userdata('language')]['proj.news']?></span></a></li> -->
                                         <li><a class="dropdown-item" href="<?=base_url($language[$this->session->userdata('language')]['url.url13'])?>">/ <span class="mlink"><?=$language[$this->session->userdata('language')]['proj.contact']?></span></a></li>
                                         </ul>
                                     </li>

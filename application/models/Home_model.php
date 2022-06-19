@@ -207,4 +207,44 @@ class Home_model extends CI_Model {
         $res=$this->db->delete('studio_timeline');
         return $res;
     }
+
+    public function mesaveItem($id, $name, $type, $facebook, $twitter, $linkedin, $description, $edescription) {
+        $data = array(
+            'name'=>$name,
+            'type'=>$type,
+            'facebook'=>$facebook,
+            'twitter'=>$twitter,
+            'linkedin'=>$linkedin,
+            'description'=>$description,
+            'edescription'=>$edescription
+        );
+
+        $this->db->where('id', $id);
+        $res=$this->db->update('studio_employee', $data);
+        
+        return $res;
+    }
+
+    public function mecreateItem($name, $type, $facebook, $twitter, $linkedin, $description, $edescription) {
+        $data = array(
+            'name'=>$name,
+            'type'=>$type,
+            'facebook'=>$facebook,
+            'twitter'=>$twitter,
+            'linkedin'=>$linkedin,
+            'description'=>$description,
+            'edescription'=>$edescription
+        );
+
+        $this->db->insert('studio_employee',$data);
+        $projects_id = $this->db->insert_id();
+
+        return $projects_id;
+    }
+
+    public function medeleteitem($id) {
+        $this->db->where('id', $id);
+        $res=$this->db->delete('studio_employee');
+        return $res;
+    }
 }

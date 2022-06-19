@@ -109,4 +109,19 @@ class Projects_model extends CI_Model {
 
         return $this->db->query($query)->result_array();
     }
+
+    public function allemployee()
+    {
+        $query =    "SELECT * FROM `studio_employee`";
+
+        return $this->db->query($query)->result_array();
+    }
+
+    public function employeefromid($id)
+    {
+        $query =    "SELECT * FROM `studio_employee`
+                    WHERE `id`=$id";
+
+        return $this->db->query($query)->result_array();
+    }
 }

@@ -121,6 +121,15 @@ $lang['mproj.name'] = 'Name';
 $lang['mproj.year'] = 'Year';
 $lang['mproj.description'] = 'Description';
 
+$lang['mproj.gototimeline'] = 'TimeLine';
+$lang['mproj.gotoemployee'] = 'Employee';
+$lang['mproj.employee_title'] = 'Studio_Employee Manager';
+$lang['mproj.name'] = 'Name';
+$lang['mproj.state'] = 'State';
+$lang['mproj.facebook'] = 'FaceBook';
+$lang['mproj.twitter'] = 'Twitter';
+$lang['mproj.linkedin'] = 'Linkedin';
+
 $lang['url.url1'] = 'projects/show/featured';
 $lang['url.url2'] = 'projects/show/product';
 $lang['url.url3'] = 'projects/listprojects';

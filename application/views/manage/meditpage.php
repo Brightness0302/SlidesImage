@@ -27,7 +27,7 @@
 										          <div class="input-group">
 										            <div class="input-group-prepend">
 										              <div class="input-group-text">
-										                <i class="fa fa-amazon"></i>
+										                <i class="fa fa-amazon" style="font-size: 24px;"></i>
 										              </div>
 										            </div> 
 										            <input id="title" name="title" type="text" class="form-control" value="<?=$projects['title']?>" onblur="myFunction(this, 1)">
@@ -40,7 +40,7 @@
 										          <div class="input-group">
 										            <div class="input-group-prepend">
 										              <div class="input-group-text">
-										                <i class="fa fa-calendar"></i>
+										                <i class="fa fa-calendar" style="font-size: 24px;"></i>
 										              </div>
 										            </div> 
 										            <input id="year" name="year" type="text" class="form-control" value="<?=$projects['year']?>" onblur="myFunction(this, 1)">
@@ -65,7 +65,7 @@
 											      <div class="input-group">
 											        <div class="input-group-prepend">
 										              <div class="input-group-text">
-										                <i class="fa fa-amazon"></i>
+										                <i class="fa fa-amazon" style="font-size: 24px;"></i>
 										              </div>
 											        </div> 
 											        <input id="etitle" name="etitle" type="text" placeholder="English" class="form-control" required="required" value="<?=$projects['etitle']?>">
@@ -78,7 +78,7 @@
 										          <div class="input-group">
 										            <div class="input-group-prepend">
 										              <div class="input-group-text">
-										                <i class="fa fa-calendar"></i>
+										                <i class="fa fa-calendar" style="font-size: 24px;"></i>
 										              </div>
 										            </div> 
 										            <input id="eyear" name="eyear" type="text" class="form-control" value="<?=$projects['year']?>">
@@ -147,7 +147,7 @@
 				<div class="form-group row">
 					<div class="offset-4">
 					  <button name="submit" type="submit" class="btn btn-primary"><?=$language[$this->session->userdata('language')]['upload.save']?></button>
-					  <a href="<?=base_url('home/managestudio')?>" name="submit" class="btn btn-danger"><?=$language[$this->session->userdata('language')]['upload.cancel']?></a>
+					  <a href="<?=base_url('home/managestudio/timeline')?>" name="submit" class="btn btn-danger"><?=$language[$this->session->userdata('language')]['upload.cancel']?></a>
 					</div>
 				</div>
 			</form>
@@ -168,7 +168,7 @@
 						alert(ins);
 						form_data.append("files[]", document.getElementById('image_file').files[0]);
 						$.ajax({  
-							url:"<?=base_url('home/singleImageStore?id='.$projects['id'])?>",
+							url:"<?=base_url('home/singleImageStore/timeline/?id='.$projects['id'])?>",
 							method:"POST",  
 							data:form_data,  
 							contentType: false,  
@@ -202,7 +202,7 @@
 				        			alert("failed");
 				        			return;
 				        		}
-								window.location.href = "<?=base_url('home/managestudio')?>";
+								window.location.href = "<?=base_url('home/managestudio/timeline')?>";
 				        	}
 				        });
 					}

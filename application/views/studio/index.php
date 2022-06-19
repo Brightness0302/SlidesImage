@@ -6,10 +6,16 @@
                         <div class="col-md-6 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1000">
                             <div class="owl-carousel owl-theme nav-inside mb-0 dots-inside dots-horizontal-center" data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}">
                                 <div>
-                                    <img alt="" class="img-fluid" src="<?=base_url('assets')?>/img/generic/generic-corporate-3-2-full.jpg">
+                                    <img alt="" class="img-fluid" src="<?=base_url('assets/bg-studio/1.jpg')?>">
                                 </div>
                                 <div>
-                                    <img alt="" class="img-fluid" src="<?=base_url('assets')?>/img/generic/generic-corporate-3-3-full.jpg">
+                                    <img alt="" class="img-fluid" src="<?=base_url('assets/bg-studio/2.jpg')?>">
+                                </div>
+                                <div>
+                                    <img alt="" class="img-fluid" src="<?=base_url('assets/bg-studio/3.jpg')?>">
+                                </div>
+                                <div>
+                                    <img alt="" class="img-fluid" src="<?=base_url('assets/bg-studio/4.jpg')?>">
                                 </div>
                             </div>
                         </div>
@@ -41,90 +47,29 @@
                         </div>
                     </div>
                     <div class="row pb-4 mb-2">
+                        <?php foreach($employees as $key => $employee):?>
                         <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 appear-animation" data-appear-animation="fadeInRightShorter">
                             <span class="thumb-info thumb-info-hide-wrapper-bg bg-transparent border-radius-0">
                                 <span class="thumb-info-wrapper border-radius-0">
                                     <a href="about-me.html">
-                                        <img src="<?=base_url('assets')?>/img/team/team-1.jpg" class="img-fluid border-radius-0" alt="">
+                                        <img src="<?=base_url('assets/employee/'.$employee['id'].'.jpg')?>" class="img-employee img-fluid border-radius-0" alt="">
                                         <span class="thumb-info-title opacity-3" style="max-width: 100%">
-                                            <span class="thumb-info-inner">John Doe</span>
-                                            <span class="thumb-info-type bg-dark">CEO</span>
+                                            <span class="thumb-info-inner"><?=$employee['name']?></span>
+                                            <span class="thumb-info-type bg-dark"><?=$employee['type']?></span>
                                         </span>
                                     </a>
                                 </span>
                                 <span class="thumb-info-caption">
                                     <span class="thumb-info-caption-text"><?=$teaminfo[$this->session->userdata['language']]['teaminfo1']?></span>
                                     <span class="thumb-info-social-icons">
-                                        <a target="_blank" href="http://www.facebook.com"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
-                                        <a href="http://www.twitter.com"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-                                        <a href="http://www.linkedin.com"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a>
+                                        <a target="_blank" href="http://www.facebook.com/<?=$employee['facebook']?>"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+                                        <a href="http://www.twitter.com/<?=$employee['twitter']?>"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+                                        <a href="http://www.linkedin.com/<?=$employee['linkedin']?>"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a>
                                     </span>
                                 </span>
                             </span>
                         </div>
-                        <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
-                            <span class="thumb-info thumb-info-hide-wrapper-bg bg-transparent border-radius-0">
-                                <span class="thumb-info-wrapper border-radius-0">
-                                    <a href="about-me.html">
-                                        <img src="<?=base_url('assets')?>/img/team/team-2.jpg" class="img-fluid border-radius-0" alt="">
-                                        <span class="thumb-info-title opacity-3" style="max-width: 100%">
-                                            <span class="thumb-info-inner">Jessica Doe</span>
-                                            <span class="thumb-info-type bg-dark">Marketing</span>
-                                        </span>
-                                    </a>
-                                </span>
-                                <span class="thumb-info-caption">
-                                    <span class="thumb-info-caption-text"><?=$teaminfo[$this->session->userdata['language']]['teaminfo2']?></span>
-                                    <span class="thumb-info-social-icons">
-                                        <a target="_blank" href="http://www.facebook.com"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
-                                        <a href="http://www.twitter.com"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-                                        <a href="http://www.linkedin.com"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a>
-                                    </span>
-                                </span>
-                            </span>
-                        </div>
-                        <div class="col-sm-6 col-lg-3 mb-4 mb-sm-0 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400">
-                            <span class="thumb-info thumb-info-hide-wrapper-bg bg-transparent border-radius-0">
-                                <span class="thumb-info-wrapper border-radius-0">
-                                    <a href="about-me.html">
-                                        <img src="<?=base_url('assets')?>/img/team/team-3.jpg" class="img-fluid border-radius-0" alt="">
-                                        <span class="thumb-info-title opacity-3" style="max-width: 100%">
-                                            <span class="thumb-info-inner">Rick Edward Doe</span>
-                                            <span class="thumb-info-type bg-dark">Developer</span>
-                                        </span>
-                                    </a>
-                                </span>
-                                <span class="thumb-info-caption">
-                                    <span class="thumb-info-caption-text"><?=$teaminfo[$this->session->userdata['language']]['teaminfo3']?></span>
-                                    <span class="thumb-info-social-icons">
-                                        <a target="_blank" href="http://www.facebook.com"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
-                                        <a href="http://www.twitter.com"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-                                        <a href="http://www.linkedin.com"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a>
-                                    </span>
-                                </span>
-                            </span>
-                        </div>
-                        <div class="col-sm-6 col-lg-3 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="600">
-                            <span class="thumb-info thumb-info-hide-wrapper-bg bg-transparent border-radius-0">
-                                <span class="thumb-info-wrapper border-radius-0">
-                                    <a href="about-me.html">
-                                        <img src="<?=base_url('assets')?>/img/team/team-4.jpg" class="img-fluid border-radius-0" alt="">
-                                        <span class="thumb-info-title opacity-3" style="max-width: 100%">
-                                            <span class="thumb-info-inner">Melinda Wolosky</span>
-                                            <span class="thumb-info-type bg-dark">Design</span>
-                                        </span>
-                                    </a>
-                                </span>
-                                <span class="thumb-info-caption">
-                                    <span class="thumb-info-caption-text"><?=$teaminfo[$this->session->userdata['language']]['teaminfo4']?></span>
-                                    <span class="thumb-info-social-icons">
-                                        <a target="_blank" href="http://www.facebook.com"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
-                                        <a href="http://www.twitter.com"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-                                        <a href="http://www.linkedin.com"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a>
-                                    </span>
-                                </span>
-                            </span>
-                        </div>
+                        <?php endforeach;?>
                     </div>
                 </div>
             </section>
@@ -153,7 +98,7 @@
                                     <div class="p-2">
                                         <!--img alt="" class="img-fluid" src="img/history/history-3.jpg" /-->
                                         <?php if(file_exists("assets/studio/".$data['id'].".jpg")):?>
-                                            <img class="col-md-8 border border-danger d-block mx-auto" id="uploadimage" src="<?=base_url('assets/studio/'.$data['id'].".jpg")?>">
+                                            <img class="col-md-8 border border-danger d-block mx-auto mobile-img" id="uploadimage" src="<?=base_url('assets/studio/'.$data['id'].".jpg")?>">
                                         <?php endif;?>
                                         <h3 class="font-weight-bold text-3 mt-3 mb-1"><?=$data['title']?></h3>
                                         <p class="mb-0 text-2"><?=$data['description']?></p>

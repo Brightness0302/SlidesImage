@@ -86,7 +86,7 @@
 										  <div class="input-group">
 										    <div class="input-group-prepend">
 										      <div class="input-group-text">
-										        <i class="fa fa-amazon"></i>
+										        <i class="fa fa-amazon" style="font-size: 24px;"></i>
 										      </div>
 										    </div> 
 										    <input id="name" name="name" type="text" class="form-control" onchange="changeText(this,1)">
@@ -99,7 +99,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-location-arrow"></i>
+								                <i class="fa fa-location-arrow" style="font-size: 24px;"></i>
 								              </div>
 								            </div> 
 								            <input id="location" name="location" type="text" class="form-control" onchange="changeText(this,1)">
@@ -112,7 +112,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-money"></i>
+								                <i class="fa fa-money" style="font-size: 24px;"></i>
 								              </div>
 								            </div> 
 								            <input id="investor" name="investor" type="text" class="form-control" onchange="changeText(this,1)">
@@ -125,7 +125,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-file-text-o"></i>
+								                <i class="fa fa-file-text-o" style="font-size: 24px;"></i>
 								              </div>
 								            </div> 
 								            <input id="author" name="author" type="text" class="form-control" onchange="changeText(this,1)">
@@ -138,7 +138,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-address-book-o"></i>
+								                <i class="fa fa-address-book-o" style="font-size: 24px;"></i>
 								              </div>
 								            </div> 
 								            <input id="collaborator" name="collaborator" type="text" class="form-control" onchange="changeText(this,1)">
@@ -151,7 +151,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-calendar"></i>
+								                <i class="fa fa-calendar" style="font-size: 24px;"></i>
 								              </div>
 								            </div> 
 								            <input id="year" name=" " type="text" class="form-control" onchange="changeText(this,1)">
@@ -164,7 +164,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-behance-square"></i>
+								                <i class="fa fa-behance-square" style="font-size: 24px;"></i>
 								              </div>
 								            </div> 
 								            <input id="square" name="square" type="text" class="form-control" onchange="changeText(this,1)">
@@ -250,7 +250,7 @@
 										  <div class="input-group">
 										    <div class="input-group-prepend">
 										      <div class="input-group-text">
-										        <i class="fa fa-amazon"></i>
+										        <i class="fa fa-amazon" style="font-size: 24px;"></i>
 										      </div>
 										    </div> 
 										    <input id="ename" name="ename" type="text" class="form-control">
@@ -263,7 +263,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-location-arrow"></i>
+								                <i class="fa fa-location-arrow" style="font-size: 24px;"></i>
 								              </div>
 								            </div> 
 								            <input id="elocation" name="elocation" type="text" class="form-control">
@@ -276,7 +276,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-money"></i>
+								                <i class="fa fa-money" style="font-size: 24px;"></i>
 								              </div>
 								            </div> 
 								            <input id="einvestor" name="einvestor" type="text" class="form-control" onchange="changeText(this,2)">
@@ -289,7 +289,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-file-text-o"></i>
+								                <i class="fa fa-file-text-o" style="font-size: 24px;"></i>
 								              </div>
 								            </div> 
 								            <input id="eauthor" name="eauthor" type="text" class="form-control" onchange="changeText(this,2)">
@@ -302,7 +302,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-address-book-o"></i>
+								                <i class="fa fa-address-book-o" style="font-size: 24px;"></i>
 								              </div>
 								            </div> 
 								            <input id="ecollaborator" name="ecollaborator" type="text" class="form-control" onchange="changeText(this,2)">
@@ -315,7 +315,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-calendar"></i>
+								                <i class="fa fa-calendar" style="font-size: 24px;"></i>
 								              </div>
 								            </div> 
 								            <input id="eyear" name="eyear" type="text" class="form-control" onchange="changeText(this,2)">
@@ -328,7 +328,7 @@
 								          <div class="input-group">
 								            <div class="input-group-prepend">
 								              <div class="input-group-text">
-								                <i class="fa fa-behance-square"></i>
+								                <i class="fa fa-behance-square" style="font-size: 24px;"></i>
 								              </div>
 								            </div> 
 								            <input id="esquare" name="esquare" type="text" class="form-control" onchange="changeText(this,2)">
@@ -363,7 +363,7 @@
 													<div class="input-group">
 														<div class="input-group-prepend">
 															<div class="input-group-text">
-																<i class="fa fa-sort-numeric-asc"></i>
+																<i class="fa fa-sort-numeric-asc" style="font-size: 24px;"></i>
 															</div>
 														</div> 
 														<input id="gcount" name="gcount" type="text" class="form-control" disabled>
@@ -539,7 +539,7 @@
 				          <div class="input-group">
 				            <div class="input-group-prepend">
 				              <div class="input-group-text">
-				                <i class="fa fa-amazon"></i>
+				                <i class="fa fa-amazon" style="font-size: 24px;"></i>
 				              </div>
 				            </div> 
 				            <input id="gname" name="gname" type="text" class="form-control">
@@ -552,7 +552,7 @@
 				          <div class="input-group">
 				            <div class="input-group-prepend">
 				              <div class="input-group-text">
-				                <i class="fa fa-id-card-o"></i>
+				                <i class="fa fa-id-card-o" style="font-size: 24px;"></i>
 				              </div>
 				            </div> 
 				            <input id="gtype" name="gtype" type="text" class="form-control">

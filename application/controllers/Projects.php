@@ -146,6 +146,7 @@ class Projects extends CI_Controller {
         $this->checklanguage();
         $this->load->model('projects_model', 'projects');
         $studio['studio'] = $this->projects->allstudio();
+        $studio['employees'] = $this->projects->allemployee();
 
         $data['title'] = 'Protoarch';
         $data['language']['english']=$this->lang->load('proj','english',true);

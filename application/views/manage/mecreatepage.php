@@ -22,7 +22,7 @@
 										<div class="form-group row">
 											<div class="col-12">
 										      <div class="form-group row">
-										        <label for="title" class="col-4 col-form-label"><?=$language["croatian"]['mproj.name']?></label> 
+										        <label for="name" class="col-4 col-form-label"><?=$language["croatian"]['mproj.name']?></label> 
 										        <div class="col-8">
 										          <div class="input-group">
 										            <div class="input-group-prepend">
@@ -30,20 +30,57 @@
 										                <i class="fa fa-amazon" style="font-size: 24px;"></i>
 										              </div>
 										            </div> 
-										            <input id="title" name="title" type="text" class="form-control" onblur="myFunction(this, 1)">
+										            <input id="name" name="name" type="text" class="form-control" onblur="myFunction(this, 1)">
 										          </div>
 										        </div>
 										      </div>
 										      <div class="form-group row">
-										        <label for="year" class="col-4 col-form-label"><?=$language["croatian"]['mproj.year']?></label>
+										        <label class="col-4 col-form-label" for="type"><?=$language["croatian"]['mproj.state']?></label> 
+										        <div class="col-8">
+										          <select id="type" name="type" class="custom-select" required="required" onblur="myFunction(this, 1)">
+										            <option value="CEO" selected>CEO</option>
+										            <option value="MARKETING">MARKETING</option>
+										            <option value="DEVELOPER">DEVELOPER</option>
+										            <option value="DESIGN">DESIGN</option>
+										          </select>
+										        </div>
+										      </div>
+										      <div class="form-group row">
+										        <label for="facebook" class="col-4 col-form-label"><?=$language["croatian"]['mproj.facebook']?></label> 
 										        <div class="col-8">
 										          <div class="input-group">
 										            <div class="input-group-prepend">
 										              <div class="input-group-text">
-										                <i class="fa fa-calendar" style="font-size: 24px;"></i>
+										                <i class="fa fa-amazon" style="font-size: 24px;"></i>
 										              </div>
 										            </div> 
-										            <input id="year" name="year" type="text" class="form-control" onblur="myFunction(this, 1)">
+										            <input id="facebook" name="facebook" type="text" class="form-control" onblur="myFunction(this, 1)">
+										          </div>
+										        </div>
+										      </div>
+										      <div class="form-group row">
+										        <label for="twitter" class="col-4 col-form-label"><?=$language["croatian"]['mproj.twitter']?></label> 
+										        <div class="col-8">
+										          <div class="input-group">
+										            <div class="input-group-prepend">
+										              <div class="input-group-text">
+										                <i class="fa fa-amazon" style="font-size: 24px;"></i>
+										              </div>
+										            </div> 
+										            <input id="twitter" name="twitter" type="text" class="form-control" onblur="myFunction(this, 1)">
+										          </div>
+										        </div>
+										      </div>
+										      <div class="form-group row">
+										        <label for="name" class="col-4 col-form-label"><?=$language["croatian"]['mproj.linkedin']?></label> 
+										        <div class="col-8">
+										          <div class="input-group">
+										            <div class="input-group-prepend">
+										              <div class="input-group-text">
+										                <i class="fa fa-amazon" style="font-size: 24px;"></i>
+										              </div>
+										            </div> 
+										            <input id="linkedin" name="linkedin" type="text" class="form-control" onblur="myFunction(this, 1)">
 										          </div>
 										        </div>
 										      </div>
@@ -57,31 +94,68 @@
 										</div>
 									</div>
 									<div class="tab-pane" id="EN" role="tabpanel" aria-labelledby="EN-tab">
-								  		<div class="form-group row">
-								  			<div class="col-12">
+										<div class="form-group row">
+											<div class="col-12">
 										      <div class="form-group row">
-										        <label for="etitle" class="col-4 col-form-label"><?=$language["croatian"]['mproj.name']?></label> 
-										        <div class="col-8">
-											      <div class="input-group">
-											        <div class="input-group-prepend">
-										              <div class="input-group-text">
-										                <i class="fa fa-amazon" style="font-size: 24px;"></i>
-										              </div>
-											        </div> 
-											        <input id="etitle" name="etitle" type="text" class="form-control" required="required" onblur="myFunction(this, 2)">
-											      </div>
-											    </div>
-										      </div>
-										      <div class="form-group row">
-										        <label for="eyear" class="col-4 col-form-label"><?=$language["croatian"]['mproj.year']?></label>
+										        <label for="ename" class="col-4 col-form-label">Name</label> 
 										        <div class="col-8">
 										          <div class="input-group">
 										            <div class="input-group-prepend">
 										              <div class="input-group-text">
-										                <i class="fa fa-calendar" style="font-size: 24px;"></i>
+										                <i class="fa fa-amazon" style="font-size: 24px;"></i>
 										              </div>
 										            </div> 
-										            <input id="eyear" name="eyear" type="text" class="form-control" onblur="myFunction(this, 2)">
+										            <input id="ename" name="ename" type="text" class="form-control" onblur="myFunction(this, 2)">
+										          </div>
+										        </div>
+										      </div>
+										      <div class="form-group row">
+										        <label class="col-4 col-form-label" for="etype">State</label> 
+										        <div class="col-8">
+										          <select id="etype" name="etype" class="custom-select" required="required" onblur="myFunction(this, 2)">
+										            <option value="CEO" selected>CEO</option>
+										            <option value="MARKETING">MARKETING</option>
+										            <option value="DEVELOPER">DEVELOPER</option>
+										            <option value="DESIGN">DESIGN</option>
+										          </select>
+										        </div>
+										      </div>
+										      <div class="form-group row">
+										        <label for="efacebook" class="col-4 col-form-label">FaceBook</label> 
+										        <div class="col-8">
+										          <div class="input-group">
+										            <div class="input-group-prepend">
+										              <div class="input-group-text">
+										                <i class="fa fa-amazon" style="font-size: 24px;"></i>
+										              </div>
+										            </div> 
+										            <input id="efacebook" name="efacebook" type="text" class="form-control" onblur="myFunction(this, 2)">
+										          </div>
+										        </div>
+										      </div>
+										      <div class="form-group row">
+										        <label for="etwitter" class="col-4 col-form-label">Twitter</label> 
+										        <div class="col-8">
+										          <div class="input-group">
+										            <div class="input-group-prepend">
+										              <div class="input-group-text">
+										                <i class="fa fa-amazon" style="font-size: 24px;"></i>
+										              </div>
+										            </div> 
+										            <input id="etwitter" name="etwitter" type="text" class="form-control" onblur="myFunction(this, 2)">
+										          </div>
+										        </div>
+										      </div>
+										      <div class="form-group row">
+										        <label for="elinkedin" class="col-4 col-form-label">Linkedin</label> 
+										        <div class="col-8">
+										          <div class="input-group">
+										            <div class="input-group-prepend">
+										              <div class="input-group-text">
+										                <i class="fa fa-amazon" style="font-size: 24px;"></i>
+										              </div>
+										            </div> 
+										            <input id="elinkedin" name="elinkedin" type="text" class="form-control" onblur="myFunction(this, 2)">
 										          </div>
 										        </div>
 										      </div>
@@ -92,7 +166,7 @@
 										        </div>
 										      </div>
 											</div>
-								  		</div>
+										</div>
 								  	</div>
 								</div>
 							</div>
@@ -105,7 +179,7 @@
 										</label>
 									</div>
 									<div class="col-6">
-										<img class="col-md-8 border border-danger" id="uploadimage" src="<?=base_url('assets/studio/plus.png')?>">
+										<img class="col-md-8 border border-danger" id="uploadimage" src="<?=base_url('assets/employee/plus.png')?>">
 									</div>
 								</div>
 								<style type="text/css">
@@ -147,7 +221,7 @@
 				<div class="form-group row">
 					<div class="offset-4">
 					  <button name="submit" type="submit" class="btn btn-primary"><?=$language[$this->session->userdata('language')]['upload.save']?></button>
-					  <a href="<?=base_url('home/managestudio/timeline')?>" name="submit" class="btn btn-danger"><?=$language[$this->session->userdata('language')]['upload.cancel']?></a>
+					  <a href="<?=base_url('home/managestudio/employee')?>" name="submit" class="btn btn-danger"><?=$language[$this->session->userdata('language')]['upload.cancel']?></a>
 					</div>
 				</div>
 			</form>
@@ -162,16 +236,18 @@
 				$('#editpage').on('submit', function(e){
 					e.preventDefault();
 					{
-						var title = $('#title').val();
-						var etitle = $('#etitle').val();
-				        var year = $('#year').val();
+						var name = $('#name').val();
+						var type = $('#type').val();
+						var facebook = $('#facebook').val();
+						var twitter = $('#twitter').val();
+						var linkedin = $('#linkedin').val();
 				        var description = $('#description').val();
 				        var edescription = $('#edescription').val();
 
-				        var form_data = {title:title, etitle:etitle, year:year, description:description, edescription:edescription};
+				        var form_data = {name:name, type:type, facebook:facebook, twitter:twitter, linkedin:linkedin, description:description, edescription:edescription};
 
 				        $.ajax({
-				        	url: "<?=base_url('home/msaveclick')?>",
+				        	url: "<?=base_url('home/mesaveclick')?>",
 				        	method:"POST",
 				        	data:form_data,
 				        	success:function(res) 
@@ -189,7 +265,7 @@
 									alert(ins);
 									form_data.append("files[]", document.getElementById('image_file').files[0]);
 									$.ajax({  
-										url:"<?=base_url('home/singleImageStore/timeline/?id=')?>"+id,
+										url:"<?=base_url('home/singleImageStore/employee?id=')?>"+id,
 										method:"POST",  
 										data:form_data,  
 										contentType: false,  
@@ -198,12 +274,12 @@
 										async:false,
 										success:function(res) {
 											alert("uploaded:"+res);
-											window.location.href = "<?=base_url('home/managestudio/timeline')?>";
+											window.location.href = "<?=base_url('home/managestudio/employee')?>";
 										}
 									});  
 								}
 								else {
-									window.location.href = "<?=base_url('home/managestudio/timeline')?>";
+									window.location.href = "<?=base_url('home/managestudio/employee')?>";
 								}
 				        	}
 				        });

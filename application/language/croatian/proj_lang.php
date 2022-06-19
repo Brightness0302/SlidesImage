@@ -121,6 +121,15 @@ $lang['mproj.name'] = 'Ime';
 $lang['mproj.year'] = 'Godina';
 $lang['mproj.description'] = 'Opis';
 
+$lang['mproj.gototimeline'] = 'Vremenska Crta';
+$lang['mproj.gotoemployee'] = 'Zaposlenik';
+$lang['mproj.employee_title'] = 'Studio_Employee Manager';
+$lang['mproj.name'] = 'Ime';
+$lang['mproj.state'] = 'država';
+$lang['mproj.facebook'] = 'FaceBook';
+$lang['mproj.twitter'] = 'Twitter';
+$lang['mproj.linkedin'] = 'Linkedin';
+
 $lang['url.url1'] = 'projekti/emisija/istaknuti';
 $lang['url.url2'] = 'projekti/emisija/proizvod';
 $lang['url.url3'] = 'projekti/listprojekti';

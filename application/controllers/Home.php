@@ -12,8 +12,13 @@ class Home extends CI_Controller {
         $this->load->helper('form');
     }
 
-    public function checklanguage() 
-    {
+    public function issignin() {
+        $user=$this->session->userdata('user');
+        if (!(isset($user["email"])&&isset($user["pass"])))
+            redirect(base_url('signin'));
+    }
+
+    public function checklanguage() {
         $val=$this->session->userdata('language');
         $this->session->set_userdata('page','home'); 
         $this->session->set_userdata("clicked","studio");
@@ -21,8 +26,7 @@ class Home extends CI_Controller {
             $this->language_HR();
     }
 
-    public function dashboard()
-    {
+    public function dashboard(){
         $this->checklanguage();
 
         $this->load->model('projects_model', 'projects');
@@ -78,8 +82,7 @@ class Home extends CI_Controller {
         $this->load->view('templates/home_footer', $data);
     }
 
-    public function contact()
-    {
+    public function contact(){
         $this->checklanguage();
 
         $this->load->model('projects_model', 'projects');
@@ -135,8 +138,7 @@ class Home extends CI_Controller {
         $this->load->view('templates/contact_footer', $data);
     }
 
-    public function adminlogin()
-    {
+    public function adminlogin(){
         $data['title'] = 'Protoarch';
         $data['language']['english']=$this->lang->load('proj','english',true);
         $data['language']['croatian']=$this->lang->load('proj','croatian',true);
@@ -165,10 +167,12 @@ class Home extends CI_Controller {
             redirect(base_url('signin'));
             return;
         }
-        redirect(base_url('manage'));
+        $this->session->set_userdata('user',["email"=>$email,"pass"=>$pass]);
+        redirect(base_url('home/manage'));
     }
 
     public function manage() {
+        $this->issignin();
         $this->checklanguage();
         $data['title'] = 'Protoarch';
         $data['language']['english']=$this->lang->load('proj','english',true);
@@ -188,7 +192,8 @@ class Home extends CI_Controller {
         $this->load->view('home/page_footer');
     }
 
-    public function managestudio() {
+    public function managestudio_timeline() {
+        $this->issignin();
         $this->checklanguage();
         $data['title'] = 'Protoarch';
         $data['language']['english']=$this->lang->load('proj','english',true);
@@ -196,7 +201,7 @@ class Home extends CI_Controller {
 
         $this->load->model('Projects_model', 'projects');
         $this->session->set_userdata("where","");
-        $this->session->set_userdata("clicked","studio");
+        $this->session->set_userdata("clicked","studio_timeline");
         $projects['projects'] = $this->projects->allstudio();
 
         $this->load->view('home/page_header');
@@ -208,8 +213,49 @@ class Home extends CI_Controller {
         $this->load->view('home/page_footer');
     }
 
-    public function adminregister()
-    {
+    public function managestudio_background() {
+        $this->issignin();
+        $this->checklanguage();
+        $data['title'] = 'Protoarch';
+        $data['language']['english']=$this->lang->load('proj','english',true);
+        $data['language']['croatian']=$this->lang->load('proj','croatian',true);
+
+        $this->load->model('Projects_model', 'projects');
+        $this->session->set_userdata("where","");
+        $this->session->set_userdata("clicked","studio_background");
+        $projects['projects'] = $this->projects->allstudio();
+
+        $this->load->view('home/page_header');
+        $this->load->view('home/navbar');
+        $this->load->view('home/sidebar',$data);
+        $this->load->view('home/page_main_head');
+        $this->load->view('manage/studio' ,$projects);
+        $this->load->view('home/page_main_foot');
+        $this->load->view('home/page_footer');
+    }
+
+    public function managestudio_employee() {
+        $this->issignin();
+        $this->checklanguage();
+        $data['title'] = 'Protoarch';
+        $data['language']['english']=$this->lang->load('proj','english',true);
+        $data['language']['croatian']=$this->lang->load('proj','croatian',true);
+
+        $this->load->model('Projects_model', 'projects');
+        $this->session->set_userdata("where","");
+        $this->session->set_userdata("clicked","studio_employee");
+        $projects['projects'] = $this->projects->allemployee();
+
+        $this->load->view('home/page_header');
+        $this->load->view('home/navbar');
+        $this->load->view('home/sidebar',$data);
+        $this->load->view('home/page_main_head');
+        $this->load->view('manage/employee' ,$projects);
+        $this->load->view('home/page_main_foot');
+        $this->load->view('home/page_footer');
+    }
+
+    public function adminregister() {
         $data['title'] = 'Protoarch';
         $data['language']['english']=$this->lang->load('proj','english',true);
         $data['language']['croatian']=$this->lang->load('proj','croatian',true);
@@ -219,8 +265,7 @@ class Home extends CI_Controller {
         $this->load->view('templates/extra_footer');
     }
 
-    public function clickregister()
-    {
+    public function clickregister() {
         $name=$this->input->post('fullname');
         $email=$this->input->post('email');
         $password=$this->input->post('password');
@@ -260,8 +305,7 @@ class Home extends CI_Controller {
         echo "clickrecover:".$name.$email.$password;
     }
 
-    public function adminforgot()
-    {
+    public function adminforgot() {
         $data['title'] = 'Protoarch';
         $data['language']['english']=$this->lang->load('proj','english',true);
         $data['language']['croatian']=$this->lang->load('proj','croatian',true);
@@ -271,13 +315,11 @@ class Home extends CI_Controller {
         $this->load->view('templates/extra_footer');
     }
 
-    public function clickforgot()
-    {
+    public function clickforgot() {
         echo "clickforgot";
     }
 
-    public function adminrecover()
-    {
+    public function adminrecover() {
         $data['title'] = 'Protoarch';
         $data['language']['english']=$this->lang->load('proj','english',true);
         $data['language']['croatian']=$this->lang->load('proj','croatian',true);
@@ -287,92 +329,11 @@ class Home extends CI_Controller {
         $this->load->view('templates/extra_footer');
     }
 
-    public function clickrecover()
-    {
+    public function clickrecover() {
         echo "clickrecover";
     }
 
-    public function clickdelete()
-    {
-        $id = $this->input->post('id');
-        
-        $this->load->model('Home_model', 'home');
-        $res = $this->home->deleteitem($id);
-        echo $res;
-        return;
-    }
-
-    public function clickedit($id)
-    {
-        if (!$id) // works with request
-            return;
-
-        $this->editpage($id);
-    }
-
-    public function createpage()
-    {
-        $this->checklanguage();
-
-        $data['title'] = 'Protoarch';
-        $data['language']['english']=$this->lang->load('proj','english',true);
-        $data['language']['croatian']=$this->lang->load('proj','croatian',true);
-
-        $this->session->set_userdata("clicked","projects");
-
-        $this->load->view('home/page_header');
-        $this->load->view('home/navbar');
-        $this->load->view('home/sidebar',$data);
-        $this->load->view('home/page_main_head');
-        $this->load->view('manage/createpage');
-        $this->load->view('home/page_main_foot');
-        $this->load->view('home/page_footer');
-    }
-
-    public function editpage($id)
-    {
-        $this->checklanguage();
-        $this->load->model('projects_model', 'projects');
-        $projects = $this->projects->projectsfromcategory($id);
-
-        $path = 'assets/projects/'.$projects[0]['id'].'/';
-
-        $testimages=[];
-        foreach (glob($path."*.*") as $file) {
-            array_push($testimages,$file);
-        }
-
-        $files=[];
-        $imgorder=$projects[0]['imgorder'];
-        $imgorder=explode(",", $imgorder);
-        $imgorder = array_filter($imgorder, function($v){ 
-            return !is_null($v) && $v !== ''; 
-        });
-        for ($i=0;$i<count($imgorder);$i++) {
-            $c = ($imgorder[$i]-1);
-            array_push($files ,$testimages[$c]);
-        }
-
-        $data['title'] = 'Protoarch';
-        $data['projects'] = $projects[0];
-        $data['imgorder'] = $imgorder;
-        $data['files'] = $files;
-        $data['language']['english']=$this->lang->load('proj','english',true);
-        $data['language']['croatian']=$this->lang->load('proj','croatian',true);
-
-        $this->session->set_userdata("clicked","projects");
-
-        $this->load->view('home/page_header');
-        $this->load->view('home/navbar');
-        $this->load->view('home/sidebar',$data);
-        $this->load->view('home/page_main_head');
-        $this->load->view('manage/editpage', $data);
-        $this->load->view('home/page_main_foot');
-        $this->load->view('home/page_footer');
-    }
-
-    public function multipleImageStore()
-    {
+    public function multipleImageStore() {
         if (!isset($_GET['id'])) // works with request
             return;
 
@@ -425,8 +386,7 @@ class Home extends CI_Controller {
         // echo json_encode($arr);
     }
 
-    public function singleImageStore()
-    {
+    public function singleImageStore($path) {
         if (!isset($_GET['id'])) // works with request
             return;
 
@@ -434,7 +394,10 @@ class Home extends CI_Controller {
 
         $id = $_GET['id'];
         // echo $countfiles;
-        $path="assets/studio/";
+        if ($path=="timeline")
+            $path="assets/studio/";
+        if ($path=="employee")
+            $path="assets/employee/";
         if(file_exists($path.$id.".jpg")) {
             unlink($path.$id.".jpg");
         }
@@ -469,6 +432,7 @@ class Home extends CI_Controller {
         }
         // echo json_encode($arr);
     }
+
     function resize_image($file_path) {
         // Set your config up
         $config['image_library']    = "gd2";      
@@ -489,6 +453,81 @@ class Home extends CI_Controller {
            $this->image_lib->display_errors();  
         } 
         $this->image_lib->clear(); 
+    }
+
+    public function clickdelete() {
+        $id = $this->input->post('id');
+        
+        $this->load->model('Home_model', 'home');
+        $res = $this->home->deleteitem($id);
+        echo $res;
+        return;
+    }
+
+    public function clickedit($id) {
+        if (!$id) // works with request
+            return;
+
+        $this->editpage($id);
+    }
+
+    public function createpage() {
+        $this->checklanguage();
+
+        $data['title'] = 'Protoarch';
+        $data['language']['english']=$this->lang->load('proj','english',true);
+        $data['language']['croatian']=$this->lang->load('proj','croatian',true);
+
+        $this->session->set_userdata("clicked","projects");
+
+        $this->load->view('home/page_header');
+        $this->load->view('home/navbar');
+        $this->load->view('home/sidebar',$data);
+        $this->load->view('home/page_main_head');
+        $this->load->view('manage/createpage');
+        $this->load->view('home/page_main_foot');
+        $this->load->view('home/page_footer');
+    }
+
+    public function editpage($id) {
+        $this->checklanguage();
+        $this->load->model('projects_model', 'projects');
+        $projects = $this->projects->projectsfromcategory($id);
+
+        $path = 'assets/projects/'.$projects[0]['id'].'/';
+
+        $testimages=[];
+        foreach (glob($path."*.*") as $file) {
+            array_push($testimages,$file);
+        }
+
+        $files=[];
+        $imgorder=$projects[0]['imgorder'];
+        $imgorder=explode(",", $imgorder);
+        $imgorder = array_filter($imgorder, function($v){ 
+            return !is_null($v) && $v !== ''; 
+        });
+        for ($i=0;$i<count($imgorder);$i++) {
+            $c = ($imgorder[$i]-1);
+            array_push($files ,$testimages[$c]);
+        }
+
+        $data['title'] = 'Protoarch';
+        $data['projects'] = $projects[0];
+        $data['imgorder'] = $imgorder;
+        $data['files'] = $files;
+        $data['language']['english']=$this->lang->load('proj','english',true);
+        $data['language']['croatian']=$this->lang->load('proj','croatian',true);
+
+        $this->session->set_userdata("clicked","projects");
+
+        $this->load->view('home/page_header');
+        $this->load->view('home/navbar');
+        $this->load->view('home/sidebar',$data);
+        $this->load->view('home/page_main_head');
+        $this->load->view('manage/editpage', $data);
+        $this->load->view('home/page_main_foot');
+        $this->load->view('home/page_footer');
     }
 
     public function saveclick() {
@@ -533,8 +572,7 @@ class Home extends CI_Controller {
         echo $result;
     }
 
-    public function clickmdelete()
-    {
+    public function clickmdelete() {
         $id = $this->input->post('id');
         
         $this->load->model('Home_model', 'home');
@@ -543,23 +581,21 @@ class Home extends CI_Controller {
         return;
     }
 
-    public function clickmedit($id)
-    {
+    public function clickmedit($id) {
         if (!$id) // works with request
             return;
 
         $this->meditpage($id);
     }
 
-    public function mcreatepage()
-    {
+    public function mcreatepage() {
         $this->checklanguage();
 
         $data['title'] = 'Protoarch';
         $data['language']['english']=$this->lang->load('proj','english',true);
         $data['language']['croatian']=$this->lang->load('proj','croatian',true);
 
-        $this->session->set_userdata("clicked","studio");
+        $this->session->set_userdata("clicked","studio_timeline");
 
         $this->load->view('home/page_header');
         $this->load->view('home/navbar');
@@ -570,8 +606,7 @@ class Home extends CI_Controller {
         $this->load->view('home/page_footer');
     }
 
-    public function meditpage($id)
-    {
+    public function meditpage($id) {
         $this->checklanguage();
         $this->load->model('projects_model', 'projects');
         $projects = $this->projects->studiofromid($id);
@@ -581,7 +616,7 @@ class Home extends CI_Controller {
         $data['language']['english']=$this->lang->load('proj','english',true);
         $data['language']['croatian']=$this->lang->load('proj','croatian',true);
 
-        $this->session->set_userdata("clicked","studio");
+        $this->session->set_userdata("clicked","studio_timeline");
 
         $this->load->view('home/page_header');
         $this->load->view('home/navbar');
@@ -618,14 +653,95 @@ class Home extends CI_Controller {
         echo $result;
     }
 
-    public function language_HR()
-    {
+    public function clickmedelete() {
+        $id = $this->input->post('id');
+        
+        $this->load->model('Home_model', 'home');
+        $res = $this->home->medeleteitem($id);
+        echo $res;
+        return;
+    }
+
+    public function clickmeedit($id) {
+        if (!$id) // works with request
+            return;
+
+        $this->meeditpage($id);
+    }
+
+    public function mecreatepage() {
+        $this->checklanguage();
+
+        $data['title'] = 'Protoarch';
+        $data['language']['english']=$this->lang->load('proj','english',true);
+        $data['language']['croatian']=$this->lang->load('proj','croatian',true);
+
+        $this->session->set_userdata("clicked","studio_employee");
+
+        $this->load->view('home/page_header');
+        $this->load->view('home/navbar');
+        $this->load->view('home/sidebar',$data);
+        $this->load->view('home/page_main_head');
+        $this->load->view('manage/mecreatepage');
+        $this->load->view('home/page_main_foot');
+        $this->load->view('home/page_footer');
+    }
+
+    public function meeditpage($id) {
+        $this->checklanguage();
+        $this->load->model('projects_model', 'projects');
+        $projects = $this->projects->employeefromid($id);
+
+        $data['title'] = 'Protoarch';
+        $data['projects'] = $projects[0];
+        $data['language']['english']=$this->lang->load('proj','english',true);
+        $data['language']['croatian']=$this->lang->load('proj','croatian',true);
+
+        $this->session->set_userdata("clicked","studio_employee");
+
+        $this->load->view('home/page_header');
+        $this->load->view('home/navbar');
+        $this->load->view('home/sidebar',$data);
+        $this->load->view('home/page_main_head');
+        $this->load->view('manage/meeditpage', $data);
+        $this->load->view('home/page_main_foot');
+        $this->load->view('home/page_footer');
+    }
+
+    public function mesaveclick() {
+        $name = $this->input->post('name');
+        $type = $this->input->post('type');
+        $facebook = $this->input->post('facebook');
+        $twitter = $this->input->post('twitter');
+        $linkedin = $this->input->post('linkedin');
+        $description = $this->input->post('description');
+        $edescription = $this->input->post('edescription');
+
+        $this->load->model('Home_model', 'home');
+
+        if (!isset($_GET['id'])) // works with request
+        {
+            $projects_id = $this->home->mecreateItem($name, $type, $facebook, $twitter, $linkedin, $description, $edescription);
+            echo $projects_id;
+            return $projects_id;
+        }
+
+        // echo "123:".$this->lang->line('proj.proj_sel');
+
+        $id = $_GET['id'];
+
+        // echo $id.$name.$category.$featured.$product.$slideshowimage.$location.$investor.$author.$collaborator.$year.$square.$text.$gname.$gtype;
+
+        $result = $this->home->mesaveItem($id, $name, $type, $facebook, $twitter, $linkedin, $description, $edescription);
+        echo $result;
+    }
+
+    public function language_HR() {
         $this->session->set_userdata('language','croatian');
         // echo $this->session->userdata('language');
     }
 
-    public function language_EN()
-    {
+    public function language_EN() {
         $this->session->set_userdata('language','english');
         // echo $this->session->userdata('language');
     }

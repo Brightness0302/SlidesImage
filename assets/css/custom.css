@@ -158,6 +158,10 @@
     text-align: center;
 }
 
+.img-employee {
+    height: 200px;
+}
+
  /* Extra small devices (phones, 600px and down) */
  @media only screen and (max-width: 600px) {
     .input-group-prepend {
@@ -196,16 +200,19 @@
     .portfolio-list .portfolio-item {
         position: relative;
         margin-bottom: 8px;
-      }
+    }
 
-      .height-75 {
+    .height-75 {
         height: 330px;
-      }
+    }
 
-      .height-230 {
+    .height-230 {
         height: 230px;
-      }
+    }
 
+    .mobile-img {
+        width: 100%;
+    }
  }
 
  /* Small devices (portrait tablets and large phones, 600px and up) */
