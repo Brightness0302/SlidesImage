@@ -1,6 +1,6 @@
   <div class="card-header">
     <h3 class="float-left"><?=$language[$this->session->userdata('language')]['mproj.employee_title']?></h3>
-    <a href="<?=base_url('studio/background/createpage')?>" class="btn btn-default float-right"><h4><?=$language[$this->session->userdata('language')]['manage.add']?></h4></a>
+    <a href="<?=base_url((($this->session->userdata('language')=="english")?"en":"hr").'/studio/background/createpage')?>" class="btn btn-default float-right"><h4><?=$language[$this->session->userdata('language')]['manage.add']?></h4></a>
   </div>
   <!-- /.card-header -->
   <div class="card-body">
@@ -19,7 +19,7 @@
           echo "<tr>
                   <td>".($i+1)."</td>
                   <td>".$data[($this->session->userdata('language')=="croatian")?"description":"edescription"]."</td>
-                  <td><a href='".base_url("studio/background/clickedit/$data[id]")."' class='btn btn-primary'>".$language[$this->session->userdata('language')]['manage.edit']."</a><button class='btn btn-danger' onclick='onclickmdelete(".$data['id'].",this)'>".$language[$this->session->userdata('language')]['manage.delete']."</button></td>
+                  <td><a href='".base_url((($this->session->userdata('language')=="english")?"en":"hr")."/studio/background/clickedit/$data[id]")."' class='btn btn-primary'>".$language[$this->session->userdata('language')]['manage.edit']."</a><button class='btn btn-danger' onclick='onclickmdelete(".$data['id'].",this)'>".$language[$this->session->userdata('language')]['manage.delete']."</button></td>
                 </tr>";
         }
       ?>

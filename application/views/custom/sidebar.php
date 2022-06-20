@@ -17,19 +17,6 @@
                     <button class="btn text-3-4 p-0">
                         <a href="javascript:;" onclick="select('language_HR')" class="langbtn-sidemenu <?=($this->session->userdata('language')=='croatian')?'langbtn-sidemenu-active':''?>">HR</a> | <a href="javascript:;" onclick="select('language_EN')" class="langbtn-sidemenu <?=($this->session->userdata('language')=='english')?'langbtn-sidemenu-active':''?>">EN</a>
                         <script>
-                            function select(lang) {
-                                $.ajax({
-                                    url: "<?=base_url($this->session->userdata('page'))?>/"+lang,
-                                    type: 'POST',
-                                    data: {},
-                                    error: function() {
-                                        alert('Something is wrong');
-                                    },
-                                    success: function(data) {
-                                        window.location.reload();
-                                    }
-                                });
-                            }
                         </script>
                     </button>
                     </div>
@@ -41,7 +28,7 @@
                                 <nav>
                                     <ul class="nav nav-pills" id="mainNav">
                                         <!-- <li><a class="dropdown-item" href="<?php echo base_url();?>/home/adminlogin">/ <span class="mlink"> Admin Page </span></a></li> -->
-                                        <li><a class="dropdown-item" href="<?php echo base_url();?>">/ <span class="mlink"> <?=$language[$this->session->userdata('language')]['proj.home']?> </span></a></li>
+                                        <li><a class="dropdown-item" href="<?=base_url((($this->session->userdata('language')=="english")?"en":"hr"));?>">/ <span class="mlink"> <?=$language[$this->session->userdata('language')]['proj.home']?> </span></a></li>
                                         <li class="dropdown">
                                             <a class="dropdown-item dropdown-toggle active" href="#">
                                                 / <span class="mlink"> <?=$language[$this->session->userdata('language')]['proj.projects']?> </span>

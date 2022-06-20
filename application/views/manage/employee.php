@@ -1,6 +1,6 @@
   <div class="card-header">
     <h3 class="float-left"><?=$language[$this->session->userdata('language')]['mproj.employee_title']?></h3>
-    <a href="<?=base_url('studio/employee/createpage')?>" class="btn btn-default float-right"><h4><?=$language[$this->session->userdata('language')]['manage.add']?></h4></a>
+    <a href="<?=base_url((($this->session->userdata('language')=="english")?"en":"hr").'/studio/employee/createpage')?>" class="btn btn-default float-right"><h4><?=$language[$this->session->userdata('language')]['manage.add']?></h4></a>
   </div>
   <!-- /.card-header -->
   <div class="card-body">
@@ -27,7 +27,7 @@
                   <td>".$data['facebook']."</td>
                   <td>".$data['twitter']."</td>
                   <td>".$data['linkedin']."</td>
-                  <td><a href='".base_url("studio/employee/clickedit/$data[id]")."' class='btn btn-primary'>".$language[$this->session->userdata('language')]['manage.edit']."</a><button class='btn btn-danger' onclick='onclickmdelete(".$data['id'].",this)'>".$language[$this->session->userdata('language')]['manage.delete']."</button></td>
+                  <td><a href='".base_url((($this->session->userdata('language')=="english")?"en":"hr")."/studio/employee/clickedit/$data[id]")."' class='btn btn-primary'>".$language[$this->session->userdata('language')]['manage.edit']."</a><button class='btn btn-danger' onclick='onclickmdelete(".$data['id'].",this)'>".$language[$this->session->userdata('language')]['manage.delete']."</button></td>
                 </tr>";
         }
       ?>

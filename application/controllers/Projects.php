@@ -163,14 +163,21 @@ class Projects extends CI_Controller {
         $this->load->view('details/foot', $data);
     }
 
-    public function language_HR()
-    {
+    public function getlanguage() {
+        $lang=$this->session->userdata('language');
+        if ($lang=="croatian")
+            return "hr";
+        else if ($lang=="english")
+            return "en";
+        return "en";
+    }
+
+    public function language_HR() {
         $this->session->set_userdata('language','croatian');
         // echo $this->session->userdata('language');
     }
 
-    public function language_EN()
-    {
+    public function language_EN() {
         $this->session->set_userdata('language','english');
         // echo $this->session->userdata('language');
     }

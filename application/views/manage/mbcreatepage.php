@@ -95,7 +95,7 @@
 				<div class="form-group row">
 					<div class="offset-4">
 					  <button name="submit" type="submit" class="btn btn-primary"><?=$language[$this->session->userdata('language')]['upload.save']?></button>
-					  <a href="<?=base_url('home/managestudio/background')?>" name="submit" class="btn btn-danger"><?=$language[$this->session->userdata('language')]['upload.cancel']?></a>
+					  <a href="<?=base_url((($this->session->userdata('language')=="english")?"en":"hr").'/home/managestudio/background')?>" name="submit" class="btn btn-danger"><?=$language[$this->session->userdata('language')]['upload.cancel']?></a>
 					</div>
 				</div>
 			</form>
@@ -143,12 +143,12 @@
 										async:false,
 										success:function(res) {
 											alert("uploaded:"+res);
-											window.location.href = "<?=base_url('home/managestudio/background')?>";
+											window.location.href = "<?=base_url((($this->session->userdata('language')=="english")?"en":"hr").'/home/managestudio/background')?>";
 										}
 									});  
 								}
 								else {
-									window.location.href = "<?=base_url('home/managestudio/background')?>";
+									window.location.href = "<?=base_url((($this->session->userdata('language')=="english")?"en":"hr").'/home/managestudio/background')?>";
 								}
 				        	}
 				        });

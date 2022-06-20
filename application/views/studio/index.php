@@ -47,19 +47,11 @@
                                 <span class="thumb-info-wrapper border-radius-0">
                                     <a href="about-me.html">
                                         <img src="<?=base_url('assets/employee/'.$employee['id'].'.jpg')?>" class="img-employee img-fluid border-radius-0" alt="">
-                                        <span class="thumb-info-title opacity-3" style="max-width: 100%">
-                                            <span class="thumb-info-inner"><?=$employee['name']?></span>
-                                            <span class="thumb-info-type bg-dark"><?=$employee['type']?></span>
-                                        </span>
                                     </a>
                                 </span>
                                 <span class="thumb-info-caption">
-                                    <span class="thumb-info-caption-text"><?=$teaminfo[$this->session->userdata['language']]['teaminfo1']?></span>
-                                    <span class="thumb-info-social-icons">
-                                        <a target="_blank" href="http://www.facebook.com/<?=$employee['facebook']?>"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
-                                        <a href="http://www.twitter.com/<?=$employee['twitter']?>"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-                                        <a href="http://www.linkedin.com/<?=$employee['linkedin']?>"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a>
-                                    </span>
+                                    <span class="thumb-info-caption-text" style="text-align:center; padding:0px; margin:0px; font-size:20px;color:black;font-weight:bold;"><?=$employee['name']?></span>
+                                    <span class="thumb-info-caption-text" style="text-align:center; padding:0px; margin:0px; font-size:14px;"><?=$employee['type']?></span>
                                 </span>
                             </span>
                         </div>

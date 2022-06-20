@@ -31,7 +31,23 @@
                 alert('Something is wrong');
             },
             success: function(data) {
-                window.location.reload();
+                var hostname = window.location.hostname;
+                var pathname = window.location.pathname;
+                var array=pathname.split('/');
+                for (var i=0;i<array.length;i++) {
+                    if (array[i]==="hr"&&lang==="language_EN") {
+                        array[i]="en";
+                        break;
+                    }
+                    else if(array[i]==="en"&&lang==="language_HR") {
+                        array[i]="hr";
+                        break;
+                    }
+                }
+                var path=hostname+array.join('/');
+                // alert(path+","+window.location.href);
+                window.location.href="http://"+(path);
+                // window.location.reload();
             }
         });
     }

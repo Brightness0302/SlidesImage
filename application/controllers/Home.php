@@ -139,6 +139,8 @@ class Home extends CI_Controller {
     }
 
     public function adminlogin(){
+        $this->checklanguage();
+
         $data['title'] = 'Protoarch';
         $data['language']['english']=$this->lang->load('proj','english',true);
         $data['language']['croatian']=$this->lang->load('proj','croatian',true);
@@ -155,7 +157,7 @@ class Home extends CI_Controller {
         if (!$email||!$pass) {
             $array_msg = array('message'=>'You must fill Email and password!','type'=>'loginerror','email'=>$email);
             $this->session->set_flashdata('msg',$array_msg);
-            redirect(base_url('signin'));
+            redirect(base_url($this->getlanguage().'/signin'));
             return;
         }
 
@@ -164,11 +166,11 @@ class Home extends CI_Controller {
         if ($result['msg']!='success') {
             $array_msg = array('message'=>'Sorry Retype Password!','type'=>'loginerror','email'=>$email);
             $this->session->set_flashdata('msg',$array_msg);
-            redirect(base_url('signin'));
+            redirect(base_url($this->getlanguage().'/signin'));
             return;
         }
         $this->session->set_userdata('user',["email"=>$email,"pass"=>$pass]);
-        redirect(base_url('home/manage'));
+        redirect(base_url($this->getlanguage().'/home/manage'));
     }
 
     public function manage() {
@@ -816,6 +818,15 @@ class Home extends CI_Controller {
 
         $result = $this->home->mbsaveItem($id, $description, $edescription);
         echo $result;
+    }
+
+    public function getlanguage() {
+        $lang=$this->session->userdata('language');
+        if ($lang=="croatian")
+            return "hr";
+        else if ($lang=="english")
+            return "en";
+        return "en";
     }
 
     public function language_HR() {

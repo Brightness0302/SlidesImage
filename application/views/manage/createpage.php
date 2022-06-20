@@ -564,7 +564,7 @@
 				<div class="form-group rows">
 					<div class="offset-4">
 					  <button name="submit" type="submit" class="btn btn-primary"><?=$language[$this->session->userdata('language')]['upload.save']?></button>
-					  <a href="<?=base_url('home/manage')?>" name="submit" class="btn btn-danger"><?=$language[$this->session->userdata('language')]['upload.cancel']?></a>
+					  <a href="<?=base_url((($this->session->userdata('language')=="english")?"en":"hr").'/home/manage')?>" name="submit" class="btn btn-danger"><?=$language[$this->session->userdata('language')]['upload.cancel']?></a>
 					</div>
 				</div>
 			</form>
@@ -648,12 +648,12 @@
 												return;
 											}
 											$("#gcount").val(ins);
-											window.location.href = "<?=base_url('home/manage')?>";
+											window.location.href = "<?=base_url((($this->session->userdata('language')=="english")?"en":"hr").'/home/manage')?>";
 										}
 									});  
 								}
 								else {
-								    window.location.href = "<?=base_url('home/manage')?>";
+								    window.location.href = "<?=base_url((($this->session->userdata('language')=="english")?"en":"hr").'/home/manage')?>";
 								}
 				        	}
 				        });

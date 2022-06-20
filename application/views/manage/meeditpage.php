@@ -221,7 +221,7 @@
 				<div class="form-group row">
 					<div class="offset-4">
 					  <button name="submit" type="submit" class="btn btn-primary"><?=$language[$this->session->userdata('language')]['upload.save']?></button>
-					  <a href="<?=base_url('home/managestudio/employee')?>" name="submit" class="btn btn-danger"><?=$language[$this->session->userdata('language')]['upload.cancel']?></a>
+					  <a href="<?=base_url((($this->session->userdata('language')=="english")?"en":"hr").'/home/managestudio/employee')?>" name="submit" class="btn btn-danger"><?=$language[$this->session->userdata('language')]['upload.cancel']?></a>
 					</div>
 				</div>
 			</form>
@@ -277,7 +277,7 @@
 				        			alert("failed");
 				        			return;
 				        		}
-								window.location.href = "<?=base_url('home/managestudio/employee')?>";
+								window.location.href = "<?=base_url((($this->session->userdata('language')=="english")?"en":"hr").'/home/managestudio/employee')?>";
 				        	}
 				        });
 					}

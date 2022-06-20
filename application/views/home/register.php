@@ -78,7 +78,7 @@
         </a>
       </div>
 
-      <a href="<?=base_url('signin')?>" class="text-center">I already have a membership</a>
+      <a href="<?=base_url((($this->session->userdata('language')=="english")?"en":"hr").'/signin')?>" class="text-center">I already have a membership</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
