@@ -1,10 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class MY_Router extends CI_Router {
+class Sample_Router extends CI_Router {
     protected function _parse_routes()
     {
     // Language detection over URL
+      echo $this->uri->segments[1];
       if($this->uri->segments[1] == $this->config->config['language']) {
         unset($this->uri->segments[1]);
       }    
